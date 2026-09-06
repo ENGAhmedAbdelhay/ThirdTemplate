@@ -97,7 +97,6 @@
     color: var(--darkmode-color);
     border: 2px solid var(--darkmode-color);
     transition-delay: var(--main-transition);
-    overflow: hidden;
 }
 
 html {
