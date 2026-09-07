@@ -403,7 +403,7 @@ header .mega-menu .links li a i {
 }
 
 .articles .box .content {
-    padding: 20px;
+    padding: 10px;
 }
 .articles .box .content h3 {
 
@@ -416,12 +416,52 @@ header .mega-menu .links li a i {
 }
 .articles .box .info {
     padding: 20px;
+    border-top: 2px solid var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 20px);
+    align-items: center;
 }
 .articles .box .info a {
-
+    color: var(--main-color);
 }
 .articles .box .info i {
+    color: var(--main-color);
+    cursor: pointer;
+}
 
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    color: var(--main-color);    
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 25px #2196f360;    
+    font-size: 20px;
+    text-decoration: none;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 101;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-top:hover {
+    transform: scale(1.2) translateY(-4px);
+    box-shadow: 0 6px 15px #2196f380;
 }
 
 
@@ -521,5 +561,11 @@ header .mega-menu .links li a i {
 @media (min-width: 1200px) {
     .container {
         width: 1190px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1290px;
     }
 }
