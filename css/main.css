@@ -381,12 +381,12 @@ header .mega-menu .links li a i {
 
 .articles .box {
     background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
-    -webkit-backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -406,7 +406,9 @@ header .mega-menu .links li a i {
     padding: 10px;
 }
 .articles .box .content h3 {
-
+    font-size: 20px;
+    margin: 0;
+    color: var(--main-color);
 }
 .articles .box .content p {
     margin: 10px 0 0;
@@ -424,27 +426,42 @@ header .mega-menu .links li a i {
 }
 .articles .box .info a {
     color: var(--main-color);
+    font-weight: bold;
 }
 .articles .box .info i {
     color: var(--main-color);
     cursor: pointer;
 }
-
+.articles .box:hover .info i {
+    animation: moving-arrow 0.5s linear infinite;
+}
+@keyframes moving-arrow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 .scroll-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    color: var(--main-color);    
+    bottom: 50px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    color: var(--main-color);
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 25px #2196f360;    
+    box-shadow: 0 4px 25px #2196f360;
     font-size: 20px;
-    text-decoration: none;    
+    text-decoration: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -453,7 +470,14 @@ header .mega-menu .links li a i {
     z-index: 101;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
+@media (max-width: 767px) {
+    .scroll-top {
+        width: 45px;
+        height: 45px;
+        bottom: 30px;
+        right: 20px;
+    }
+}
 .scroll-top.show {
     opacity: 1;
     pointer-events: auto;
@@ -464,10 +488,40 @@ header .mega-menu .links li a i {
     box-shadow: 0 6px 15px #2196f380;
 }
 
+.gallery {
+    padding: var(--padding-section);
+    position: relative;
+    background-color: var(--box-shadow-color);
+}
+.gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 20px;
+}
+.gallery .box {
+    padding: 12px;
+    background: white;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.13) , 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+.gallery .box .image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+/* 01:28:00 */
 
-/* 01:10:00 */
 
-
+@media (max-width: 767px) {
+    .gallery .container {
+        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    }
+    .gallery .box .image img {
+        width: 300px;
+        height: 300px;
+    }
+}
 
 
 
